@@ -1,0 +1,16 @@
+plugins {
+    id "java"
+    id "application"
+}
+
+group "de.uni_passau.fim.se2"
+version "1.0-SNAPSHOT"
+
+sourceCompatibility = 1.11
+
+jar {
+    archiveBaseName = "hello"
+    manifest {
+        attributes "Main-Class": "de.uni_passau.fim.se2.Main"
+    }
+}

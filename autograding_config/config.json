@@ -1,0 +1,35 @@
+{
+  "autograding_method": "docker",
+  "max_submission_size" : 1000000,
+  "resource_limits": {
+    "RLIMIT_NPROC": 100,
+    "RLIMIT_NOFILE": 10000,
+    "RLIMIT_CPU": 300,
+    "RLIMIT_FSIZE": 64000000,
+    "RLIMIT_DATA": 4096000000,
+    "RLIMIT_STACK": 64000000
+  },
+  "autograding": {
+    "submission_to_compilation": ["**/*"],
+    "work_to_details": ["**/*"]
+  },
+  "testcases": [
+    {
+      "type": "Compilation",
+      "title": "Compilation",
+      "points": 5,
+      "containers": [
+        {
+          "container_image": "gradle_hanging",
+          "commands": [
+            "bash compile.sh"
+          ]
+        }
+      ],
+      "executable_name": "build/libs/hello-1.0-SNAPSHOT.jar",
+      "resource_limits": {
+        "RLIMIT_FSIZE": 64000000
+      }
+    }
+  ]
+}
